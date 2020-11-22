@@ -1,16 +1,48 @@
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
-public class Konto {
+public class Konto implements Bankkonto{
 	private String name;
-	private float kontonummer;
+	private int kontonummer;
 	private float kontostand;
-	private LocalDate birthdate = LocalDate.now(); 
+	//private LocalDate birthdate = LocalDate.now(); 
 	//birthdate = LocalDate.of(2017, 1, 13);  
 	
-	public float getKontostand() {
-		return kontostand;
+	public Konto(String n, int kn, float ks) {
+		this.kontostand=ks;
+		this.kontonummer=kn;
+		this.name=n;
+		setKontotand(kontostand);
+		setName(name);
+		setKontonummer(kontonummer);
 	}
-	public void setKontostand(float kontostand) {
-		this.kontostand = kontostand;
-	}	
+	@Override
+	public float getKontotand() {
+		return this.kontostand;
+	}
+	@Override
+	public void setKontotand(float x) {
+		this.kontostand=x;
+	}
+	@Override
+	public String getName() {
+		return this.name;
+	}
+	@Override
+	public void setName(String s) {
+		this.name=s;
+	}
+	@Override
+	public float getKontonummer() {
+		return this.kontonummer;
+	}
+	@Override
+	public void setKontonummer(int x) {
+		this.kontonummer=x;
+	}
+	@Override
+	public void transferMoney(float f) {
+		kontostand+=f;		//eigentlich ja egal ob abheben oder aufi tun oda?
+	}
+	
+	
 }
