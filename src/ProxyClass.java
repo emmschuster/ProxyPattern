@@ -41,41 +41,47 @@ public class ProxyClass implements Bankkonto {
 		System.out.println("Geld abheben ... 1\nGeld einzahlen ... 2\nKontostand ansehen ... 3");
 		task = sc.nextInt();
 		switch (task) {
-		case 1: 
+		case 1:
 			System.out.println("Wie viel willst du einzaheln?");
 			money = sc.nextInt();
-			kStand+=money;
-			System.out.println("Jetzt hast du"+getKontotand());
+			kStand += money;
+			System.out.println("Jetzt hast du" + getKontotand());
 			break;
-		case 2: 
+		case 2:
 			System.out.println("Wie viel willst du abheben?");
 			money = sc.nextInt();
-			kStand-=money;
-			System.out.println("Jetzt hast du"+getKontotand());
+			kStand -= money;
+			System.out.println("Jetzt hast du" + getKontotand());
 			break;
-		case 3: 
+		case 3:
 			System.out.println("Dein Kontostand: ");
 			System.out.println(getKontotand());
 			break;
-		default: System.out.println("Nicht vorhanden");
+		default:
+			System.out.println("Nicht vorhanden");
 		}
 	}
 
 	@Override
 	public float getKontotand() {
-		if (checkpassw()==true) {
+		if (checkpassw() == true) {
 			return B.getKontotand();
 		}
 		return 0;
 	}
 
 	private boolean checkpassw() {
-		boolean check = false; int s;
+		boolean check = false;
+		int s=0;
 		System.out.println("Passwort: ");
-		s=sc.nextInt();
-		if(this.password == s) {
+		try {
+			s = sc.nextInt();
+		} catch (Exception e) {
+			System.out.print("Fehlerhafte Eingabe und somit ");
+		}
+		if (this.password == s) {
 			System.out.println("richtig");
-			check=true;
+			check = true;
 		} else {
 			System.out.println("falsches passwort");
 		}
@@ -84,7 +90,7 @@ public class ProxyClass implements Bankkonto {
 
 	@Override
 	public void setKontotand(float x) {
-		if (checkpassw()==true) {
+		if (checkpassw() == true) {
 			B.setKontotand(x);
 		}
 	}
@@ -97,7 +103,7 @@ public class ProxyClass implements Bankkonto {
 	@Override
 	public void setName(String s) {
 		B.setName(s);
-		
+
 	}
 
 	@Override
@@ -112,7 +118,7 @@ public class ProxyClass implements Bankkonto {
 
 	@Override
 	public void transferMoney(float f) {
-		if (checkpassw()==true) {
+		if (checkpassw() == true) {
 			B.setKontotand(f);
 		}
 	}

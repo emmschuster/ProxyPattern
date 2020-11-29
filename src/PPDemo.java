@@ -23,7 +23,7 @@ public class PPDemo {
 //			System.exit(0);
 //		}
 //		sc.close();
-		ProxyClass p = new ProxyClass("Emma", 6666, 1234, 10000);
+		ProxyClass p = new ProxyClass("Emma", 6666, 1234, 10000);	//name, pin, kontonummer, geld
 		
 		System.out.println("Kontostand vorher :"+p.getKontotand());
 		System.out.println("Einzahlen von 500€"); p.setKontotand(500);
