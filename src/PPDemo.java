@@ -23,14 +23,14 @@ public class PPDemo {
 //			System.exit(0);
 //		}
 //		sc.close();
-		ProxyClass p = new ProxyClass("Emma", 6666, 1234, 10000);	//name, pin, kontonummer, geld
+		ProxyClass p = new ProxyClass("Emma", 6666, 1234, 100);	//name, pin, kontonummer, geld
 		
 		System.out.println("Kontostand vorher :"+p.getKontotand());
-		System.out.println("Einzahlen von 500€"); p.setKontotand(500);
+		System.out.println("Einzahlen von 500€"); p.transferMoney(500);
 		System.out.println("Kontostand nachher :"+p.getKontotand());
 		
 		System.out.println("Kontostand vorher :"+p.getKontotand());
-		System.out.println("Auszahlen von 250€"); p.setKontotand(-250);
+		System.out.println("Auszahlen von 250€"); p.transferMoney(-250);
 		System.out.println("Kontostand nachher :"+p.getKontotand());
 	}
 }

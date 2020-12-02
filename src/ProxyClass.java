@@ -119,7 +119,7 @@ public class ProxyClass implements Bankkonto {
 	@Override
 	public void transferMoney(float f) {
 		if (checkpassw() == true) {
-			B.setKontotand(f);
+			B.transferMoney(f);
 		}
 	}
 }

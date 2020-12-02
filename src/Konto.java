@@ -41,10 +41,9 @@ public class Konto implements Bankkonto{
 	}
 	@Override
 	public void transferMoney(float f) {
-//		kontostand+=f;		//eigentlich ja egal ob abheben oder aufi tun oda?
 		if (f>0) {
 			this.kontostand=this.kontostand+f;
-		} else this.kontostand=this.kontostand-f;
+		} else System.out.println("Error!!!");;
 	}
 	
 	
